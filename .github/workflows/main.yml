@@ -1,4 +1,4 @@
-name: Java APP CI/CD Pipeline
+name: NodeJs APP CI/CD Pipeline
 
 on: push
 
@@ -11,7 +11,7 @@ jobs:
               uses: actions/checkout@v4
 
             - name: Setup NodeJS
-              uses: actions/setup-node@v3
+              uses: actions/setup-node@v4
               with:
                 node-version: 18
                 
@@ -20,7 +20,7 @@ jobs:
               working-directory: ./app/
 
             - name: SonarQube Scan
-              uses: sonarsource/sonarqube-scan-action@main
+              uses: sonarsource/sonarqube-scan-action@v2
               env:
                 SONAR_TOKEN: ${{ secrets.SONARQUBE_TOKEN }}
                 SONAR_HOST_URL: ${{ secrets.SONARQUBE_HOST_URL }}
