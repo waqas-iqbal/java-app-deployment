@@ -17,7 +17,7 @@ jobs:
                 
             - name: Install Dependencies
               run: npm install
-              working-directory: ./app/
+              # working-directory: ./app/
 
             - name: SonarQube Scan
               uses: sonarsource/sonarqube-scan-action@v2
